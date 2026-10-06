@@ -1,0 +1,275 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Ahmed Ramy Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one calm column on a faint ledger grid; mono labels carry the "data" voice, bars carry the evidence. */
+:root{
+  --bg:#F3F6F7; --surface:#FFFFFF; --fg:#13222B; --muted:#52666F; --line:#D5DEE2;
+  --accent:#0B7A85; --accent-ink:#FFFFFF; --signal:#C98A00; --soft:#E3F1F2; --ph:#FFF3CC; --ph-ink:#5C4300;
+  --f-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --f-body:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E181D; --surface:#15232A; --fg:#E6EEF0; --muted:#9DB0B7; --line:#26383F;
+  --accent:#4FC3CE; --accent-ink:#06242A; --signal:#F0B93A; --soft:#12343A; --ph:#3A3012; --ph-ink:#F3DE9A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E181D; --surface:#15232A; --fg:#E6EEF0; --muted:#9DB0B7; --line:#26383F;
+  --accent:#4FC3CE; --accent-ink:#06242A; --signal:#F0B93A; --soft:#12343A; --ph:#3A3012; --ph-ink:#F3DE9A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:17px/1.6 var(--f-body);margin:0;padding-inline:20px;padding-block:0 64px;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px}
+body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.93;z-index:-1;pointer-events:none}
+.wrap{max-width:960px;margin-inline:auto}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
+.mono{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ph{background:var(--ph);color:var(--ph-ink);padding:0 .3em;border-radius:3px}
+
+/* nav */
+nav{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:space-between;padding-block:18px;border-bottom:1px solid var(--line)}
+nav .brand{font-family:var(--f-display);font-weight:800}
+nav ul{display:flex;flex-wrap:wrap;gap:4px 16px;list-style:none;margin:0;padding:0}
+nav a{font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--accent)}
+
+/* cover */
+.cover{padding-block:56px 40px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+.cover h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.02em}
+.cover .title{font-family:var(--f-display);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:500;color:var(--accent);margin:14px 0 18px}
+.cover p.usp{font-size:1.15rem;max-width:34em;margin:0 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.kpis{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:14px}
+.kpis div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.kpis div:last-child{border:0;padding:0}
+.kpis b{font-family:var(--f-mono);font-size:1.5rem;color:var(--accent);font-weight:500}
+.kpis span{color:var(--muted);font-size:.95rem}
+
+/* sections */
+section{padding-block:44px;border-top:1px solid var(--line)}
+section>.mono{margin-bottom:8px}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:700;margin-bottom:22px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.two>*{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p{margin:0 0 8px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
+.tags li{font-family:var(--f-mono);font-size:.74rem;background:var(--soft);color:var(--accent);padding:3px 9px;border-radius:99px}
+ul.plain{margin:0;padding-left:1.1em}
+ul.plain li{margin-bottom:5px}
+.about p{max-width:40em;margin:0 0 14px}
+
+/* projects */
+.project{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:24px;overflow:hidden}
+.project header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.project h3{font-size:1.4rem}
+.badge{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;background:var(--ph);color:var(--ph-ink);padding:3px 9px;border-radius:4px;align-self:flex-start}
+.pbody{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0}
+.pbody>*{min-width:0;padding:20px 22px}
+.pbody dl{margin:0}
+.pbody dt{font-family:var(--f-mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-top:12px}
+.pbody dt:first-child{margin-top:0}
+.pbody dd{margin:2px 0 0}
+.chart{background:var(--bg);border-left:1px solid var(--line)}
+.chart h4{font-family:var(--f-mono);font-size:.78rem;font-weight:500;letter-spacing:.04em;margin:0 0 14px;color:var(--muted)}
+.row{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) 3.6em;gap:10px;align-items:center;margin-bottom:10px;font-size:.92rem}
+.row .track{height:16px;background:var(--line);border-radius:3px;overflow:hidden}
+.row .fill{display:block;height:100%;background:var(--accent);border-radius:3px}
+.row .fill.hi{background:var(--signal)}
+.row b{font-family:var(--f-mono);font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+.chart small{color:var(--muted);display:block;margin-top:6px}
+
+/* experience / education timeline */
+.item{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr);gap:8px 24px;padding-block:14px;border-bottom:1px dashed var(--line)}
+.item:last-child{border:0}
+.item h3{font-size:1.1rem;margin-bottom:4px}
+.item p{margin:0;color:var(--muted)}
+
+/* usp */
+.usp-box{background:var(--accent);color:var(--accent-ink);border-radius:10px;padding:28px}
+.usp-box p{font-family:var(--f-display);font-size:clamp(1.3rem,3.4vw,1.9rem);line-height:1.25;margin:0;font-weight:500;max-width:30em}
+.usp-box .mono{color:inherit;opacity:.8;margin-bottom:10px;display:block}
+
+.quote{border:2px dashed var(--line);border-radius:10px;padding:22px;color:var(--muted)}
+.quote p{margin:0 0 8px}
+
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;display:grid;gap:18px}
+.contact h2{margin:0}
+.contact ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.contact li{display:flex;flex-wrap:wrap;gap:4px 14px}
+.contact li .mono{min-width:6.5em}
+footer{padding-top:28px;color:var(--muted);font-size:.9rem}
+
+@media (max-width:720px){
+  .cover{grid-template-columns:1fr;padding-block:36px 28px}
+  .chart{border-left:0;border-top:1px solid var(--line)}
+  .item{grid-template-columns:1fr}
+  .row{grid-template-columns:minmax(0,7em) minmax(0,1fr) 3.4em}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-2px)}}
+</style>
+
+<div class="wrap">
+  <nav aria-label="Portfolio sections">
+    <span class="brand">Ahmed Ramy</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 1. COVER -->
+  <header class="cover">
+    <div>
+      <p class="mono">Portfolio / Data Analysis</p>
+      <h1>Ahmed Ramy</h1>
+      <p class="title">Data Analyst</p>
+      <p class="usp">I help engineering and operations teams make faster decisions through clean data, clear dashboards and insights people can act on.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Hire me</a>
+      </div>
+    </div>
+    <div class="kpis" aria-label="Snapshot">
+      <div><span>Degree</span><b>BSc 2026</b></div>
+      <div><span>Core tools</span><b>SQL · Python · Tableau · Power BI</b></div>
+      <div><span>Based in</span><b>Alexandria</b></div>
+    </div>
+  </header>
+
+  <!-- USP -->
+  <section id="usp" aria-label="Unique selling point">
+    <div class="usp-box">
+      <span class="mono">My unique value</span>
+      <p>I help engineering and operations teams turn test and production data into Power BI dashboards that show what to do next.</p>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT -->
+  <section id="about" class="about">
+    <p class="mono">02 About</p>
+    <h2>Numbers tell a story. I make sure it gets heard.</h2>
+    <p>I'm a data analyst with a BSc in Production Engineering who enjoys the full path from raw spreadsheet to decision. I clean and model data, find the pattern that matters, and present it in a form a manager can read in two minutes.</p>
+    <p>Since 2025 I have worked as an R&amp;D engineer at Prometeon Tyre Group, where I used Power BI for durability analysis. In 2026 I completed the DEPI Professional Data Analyst track, adding SQL, Python and Tableau projects.</p>
+    <p>My strengths are careful data cleaning, SQL querying and visual storytelling. I check every number twice and explain results in plain language, so the people who read my work trust it.</p>
+    
+  </section>
+
+  <!-- 4. SKILLS -->
+  <section id="skills">
+    <p class="mono">03 Skills</p>
+    <h2>Core competencies</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Data handling</h3>
+        <ul class="tags"><li>SQL</li><li>Python (pandas, NumPy)</li><li>Excel / Power Query</li><li>Data cleaning</li><li>ETL basics</li></ul>
+      </div>
+      <div class="card">
+        <h3>Visualization and reporting</h3>
+        <ul class="tags"><li>Power BI</li><li>Tableau</li><li>Matplotlib / Seaborn</li><li>Dashboard design</li><li>Data storytelling</li></ul>
+      </div>
+      <div class="card">
+        <h3>Analysis</h3>
+        <ul class="tags"><li>Descriptive statistics</li><li>A/B testing</li><li>Regression basics</li><li>Cohort analysis</li><li>KPI design</li></ul>
+      </div>
+      <div class="card">
+        <h3>Working style</h3>
+        <ul class="tags"><li>Clear communication</li><li>Attention to detail</li><li>Meeting deadlines</li><li>Client-focused</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. OFFERED SERVICES -->
+  <section id="services">
+    <p class="mono">04 Services</p>
+    <h2>What I can do for you</h2>
+    <div class="two">
+      <div class="card"><h3>Data cleaning and preparation</h3><p>Fix duplicates, missing values and inconsistent formats so your data is ready to use.</p></div>
+      <div class="card"><h3>Interactive dashboards</h3><p>Power BI or Tableau dashboards that track the KPIs your team cares about.</p></div>
+      <div class="card"><h3>Engineering and operations analysis</h3><p>Analyze test results, production and quality data to find patterns, outliers and trends.</p></div>
+      <div class="card"><h3>Excel automation and reports</h3><p>Replace manual weekly reports with formulas, Power Query and refreshable files.</p></div>
+    </div>
+  </section>
+
+  <!-- 7. PROJECTS -->
+  <section id="projects">
+    <p class="mono">05 Projects</p>
+    <h2>Selected work</h2>
+
+    <article class="project">
+      <header>
+        <h3>Durability Analysis in Power BI</h3>
+        <span class="badge">Prometeon Tyre Group · 2025</span>
+      </header>
+      <div class="pbody">
+        <dl>
+          <dt>Problem</dt><dd>Durability test data from R&amp;D needed to be reviewed and compared quickly.</dd>
+          <dt>Approach</dt><dd>Built a Power BI analysis of the durability results with interactive visuals for comparing tests.</dd>
+          <dt>Outcome</dt><dd>Engineers could compare test runs side by side and spot weak compounds and early failures without building manual reports, so durability reviews were faster and the discussion focused on what to change next.</dd>
+          <ul class="tags"><li>Power BI</li><li>R&amp;D data</li><li>Dashboard design</li></ul>
+        </dl>
+        <div class="chart">
+          <h4>Durability index by compound (sample view)</h4>
+          <div class="row"><span>Compound A</span><span class="track"><span class="fill hi" style="width:92%"></span></span><b>92</b></div>
+          <div class="row"><span>Compound B</span><span class="track"><span class="fill " style="width:78%"></span></span><b>78</b></div>
+          <div class="row"><span>Compound C</span><span class="track"><span class="fill " style="width:64%"></span></span><b>64</b></div>
+          <div class="row"><span>Compound D</span><span class="track"><span class="fill " style="width:51%"></span></span><b>51</b></div>
+          <small>Illustrative values; real data is confidential.</small>
+        </div>
+      </div>
+    </article>
+
+    <h3 style="margin:30px 0 14px;font-size:1.3rem">DEPI Professional Data Analyst projects · 2026</h3>
+    <div class="two">
+      <div class="card"><h3>SQL project</h3><p><strong>Superstore Sales: profit by category and discount band</strong></p><p>Queried 9,994 order lines with joins, CTEs and window functions; found Furniture earns about 2.5% margin against roughly 17% for Technology and Office Supplies.</p><ul class="tags"><li>SQL</li></ul></div>
+      <div class="card"><h3>Python project</h3><p><strong>Superstore Sales: cleaning and discount analysis</strong></p><p>Cleaned and explored the data in pandas and Seaborn; found profit turns negative once discounts pass about 20%.</p><ul class="tags"><li>Python</li><li>pandas</li></ul></div>
+      <div class="card"><h3>Tableau project</h3><p><strong>Superstore Sales dashboard</strong></p><p>Interactive dashboard of sales and profit by region, category and year; shows the Tables sub-category and several states selling at a loss.</p><ul class="tags"><li>Tableau</li></ul></div>
+      <div class="card"><h3>Power BI project</h3><p><strong>Superstore Sales KPI report</strong></p><p>KPI report with year-over-year sales, profit margin and a regional drill-down, built on a cleaned star-schema model.</p><ul class="tags"><li>Power BI</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 3 + 5 + 8 + 9. EDUCATION, EXPERIENCE, ACHIEVEMENTS, TESTIMONIALS -->
+  <section id="background">
+    <p class="mono">06 Background</p>
+    <h2>Education and experience</h2>
+    <div class="item"><span class="mono">Experience</span>
+      <div><h3>R&amp;D Engineer, Prometeon Tyre Group</h3><p>2025 – present · Durability analysis in Power BI.</p></div></div>
+    <div class="item"><span class="mono">Training</span>
+      <div><h3>DEPI Professional Data Analyst</h3><p>Digital Egypt Pioneers Initiative (DEPI) · 2026 · SQL, Python, Tableau and Power BI.</p></div></div>
+    <div class="item"><span class="mono">Education</span>
+      <div><h3>BSc in Production Engineering, Alexandria University</h3><p>2026</p></div></div>
+  </section>
+
+  <!-- 10. CALL TO ACTION + CONTACT -->
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <p class="mono">07 Contact</p>
+        <h2>Have data that needs answers?</h2>
+        <p style="margin:0;max-width:34em">Send me a short description of your dataset and the question you want answered. I'll reply with a plan and a quote.</p>
+      </div>
+      <ul>
+        <li><span class="mono">Email</span><a href="mailto:ahmed.ramyy154@gmail.com">ahmed.ramyy154@gmail.com</a></li>
+        <li><span class="mono">LinkedIn</span><a href="https://www.linkedin.com/in/ahmed-ramy-84156b361">linkedin.com/in/ahmed-ramy-84156b361</a></li>
+        <li><span class="mono">GitHub</span><a href="https://github.com/ahmedramyy154-rgb">github.com/ahmedramyy154-rgb</a></li>
+        <li><span class="mono">Location</span><span>Alexandria, Egypt · available for remote work</span></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+</body></html>
