@@ -53,6 +53,11 @@ nav a:hover{color:var(--accent)}
 .kpis b{font-family:var(--f-mono);font-size:1.5rem;color:var(--accent);font-weight:500}
 .kpis span{color:var(--muted);font-size:.95rem}
 
+
+/* portrait */
+.side{display:grid;gap:16px;min-width:0}
+.portrait{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 16%;border-radius:10px;border:1px solid var(--line);background:var(--soft)}
+
 /* sections */
 section{padding-block:44px;border-top:1px solid var(--line)}
 section>.mono{margin-bottom:8px}
@@ -112,6 +117,7 @@ footer{padding-top:28px;color:var(--muted);font-size:.9rem}
 
 @media (max-width:720px){
   .cover{grid-template-columns:1fr;padding-block:36px 28px}
+  .portrait{max-width:320px}
   .chart{border-left:0;border-top:1px solid var(--line)}
   .item{grid-template-columns:1fr}
   .row{grid-template-columns:minmax(0,7em) minmax(0,1fr) 3.4em}
@@ -144,10 +150,13 @@ footer{padding-top:28px;color:var(--muted);font-size:.9rem}
         <a class="btn ghost" href="#contact">Hire me</a>
       </div>
     </div>
-    <div class="kpis" aria-label="Snapshot">
-      <div><span>Degree</span><b>BSc 2026</b></div>
-      <div><span>Core tools</span><b>SQL · Python · Tableau · Power BI</b></div>
-      <div><span>Based in</span><b>Alexandria</b></div>
+    <div class="side">
+      <img class="portrait" src="ahmed-ramy.jpg" width="800" height="1087" alt="Portrait of Ahmed Ramy, smiling, wearing a black blazer" fetchpriority="high">
+      <div class="kpis" aria-label="Snapshot">
+        <div><span>Degree</span><b>BSc 2026</b></div>
+        <div><span>Core tools</span><b>SQL · Python · Tableau · Power BI</b></div>
+        <div><span>Based in</span><b>Alexandria</b></div>
+      </div>
     </div>
   </header>
 
